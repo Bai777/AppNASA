@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 
-class CustomlImageView @JvmOverloads constructor(
+class CustomImageView @JvmOverloads constructor(
     context: Context,
     attr: AttributeSet?,
     defStyleAttr: Int=0
