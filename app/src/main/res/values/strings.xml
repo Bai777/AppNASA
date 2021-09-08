@@ -7,4 +7,8 @@
     <string name="favourite">favourite</string>
     <string name="settings">settings</string>
     <string name="search">Search</string>
+
+    <string name="error">Something went wrong</string>
+    <string name="reload">
+Restart continues</string>
 </resources>
