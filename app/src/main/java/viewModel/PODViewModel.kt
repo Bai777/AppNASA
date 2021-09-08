@@ -13,7 +13,6 @@ import retrofit2.Response
 class PODViewModel(private val liveDataToObserve: MutableLiveData<PODData> = MutableLiveData(),
         private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()):ViewModel(){
             fun getLiveData(): LiveData<PODData>{
-               // sendServerRequest()
                 return liveDataToObserve
             }
 
