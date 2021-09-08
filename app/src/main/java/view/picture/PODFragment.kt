@@ -48,7 +48,7 @@ class PODFragment : Fragment() {
                 }
             }
             is PODData.Loading -> {
-                binding.main.showSnackBar(getString(R.string.reload))
+                binding.main.showSnackBar(getString(R.string.load))
             }
             is PODData.Error -> {
                 binding.main.showSnackBar(getString(R.string.error))
