@@ -11,4 +11,5 @@
     <string name="error">Something went wrong</string>
     <string name="load">
 Load continues</string>
+    <string name="floatingActionButton">FloatingActionButton</string>
 </resources>
