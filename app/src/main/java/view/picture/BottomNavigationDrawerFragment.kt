@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.appnasa.R
 import com.example.appnasa.databinding.BottomNavigationLayoutBinding
-import com.example.appnasa.databinding.FragmentMainBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
@@ -27,7 +26,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.navigationView.setNavigationItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.navigation_one -> Toast.makeText(context, "1", Toast.LENGTH_SHORT).show()
                 R.id.navigation_two -> Toast.makeText(context, "2", Toast.LENGTH_SHORT).show()
             }
@@ -39,6 +38,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         super.onDestroy()
         _binding = null
     }
+
     companion object {
         fun newInstance() = BottomNavigationDrawerFragment()
     }

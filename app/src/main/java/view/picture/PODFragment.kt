@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import chips.ChipsFragment
 import coil.api.load
 import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentMainBinding
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import utils.showSnackBar
 import view.MainActivity
@@ -51,7 +54,19 @@ class PODFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendServerRequest()
-        setBottomAppBar(view)
+        setBottomAppBar()
+        // попытка скролинга
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            binding.scroll.setOnScrollChangeListener() { it, y, u, i, o ->
+//                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+//                binding.fab.setImageDrawable(
+//                    ContextCompat.getDrawable(
+//                        requireContext(),
+//                        R.drawable.ic_back_fab
+//                    )
+//                )
+//            }
+//        }
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -110,6 +125,7 @@ class PODFragment : Fragment() {
 
     companion object {
         fun newInstance() = PODFragment()
+        private var isMain = true
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -122,23 +138,56 @@ class PODFragment : Fragment() {
             R.id.app_bar_fav -> {
                 Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
             }
-            R.id.app_bar_search -> {
-                Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_settings -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, ChipsFragment.newInstance())
+                    .addToBackStack("").commit()
             }
             // у бургера id home
             android.R.id.home -> {
                 activity?.let {
-                    BottomNavigationDrawerFragment.newInstance().show(it.supportFragmentManager, "tag")
+                    BottomNavigationDrawerFragment.newInstance()
+                        .show(it.supportFragmentManager, "tag")
                 }
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setBottomAppBar(view: View) {
-        val context = activity as MainActivity
-        context.setSupportActionBar(binding.bottomAppBar)
+    private fun setBottomAppBar() {
+        (activity as MainActivity).setSupportActionBar(binding.bottomAppBar)
         setHasOptionsMenu(true)
+        binding.fab.setOnClickListener {
+            if (isMain) {
+                isMain = false
+                binding.bottomAppBar.navigationIcon = null
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_back_fab
+                    )
+                )
+                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
+            } else {
+                isMain = true
+                binding.bottomAppBar.navigationIcon =
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_hamburger_menu_bottom_bar
+                    )
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_plus_fab
+                    )
+                )
+                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
+            }
+
+        }
     }
 
 }
