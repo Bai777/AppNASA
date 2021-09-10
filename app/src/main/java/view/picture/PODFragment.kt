@@ -41,7 +41,7 @@ class PODFragment : Fragment() {
     }
 
 
-    private fun setBottomSheet(bottomSheet: ConstraintLayout){
+    private fun setBottomSheet(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
@@ -52,31 +52,32 @@ class PODFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendServerRequest()
         setBottomAppBar(view)
-        binding.inputLayout.setEndIconOnClickListener{
+        binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+                data =
+                    Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
 
 
         }
         setBottomSheet(binding.includeBottomSheet.bottomSheetContainer)
-       /* bottomSheetBehavior.addBottomSheetCallback(object :
-            BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when (newState) {
-                    BottomSheetBehavior.STATE_DRAGGING -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_COLLAPSED -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_EXPANDED -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_HIDDEN -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_SETTLING -> TODO("not implemented")
-                }
-            }
+        /* bottomSheetBehavior.addBottomSheetCallback(object :
+             BottomSheetBehavior.BottomSheetCallback() {
+             override fun onStateChanged(bottomSheet: View, newState: Int) {
+                 when (newState) {
+                     BottomSheetBehavior.STATE_DRAGGING -> TODO("not implemented")
+                     BottomSheetBehavior.STATE_COLLAPSED -> TODO("not implemented")
+                     BottomSheetBehavior.STATE_EXPANDED -> TODO("not implemented")
+                     BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO("not implemented")
+                     BottomSheetBehavior.STATE_HIDDEN -> TODO("not implemented")
+                     BottomSheetBehavior.STATE_SETTLING -> TODO("not implemented")
+                 }
+             }
 
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                TODO("not implemented")
-            }
-        })*/
+             override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                 TODO("not implemented")
+             }
+         })*/
 
 
     }
@@ -87,8 +88,10 @@ class PODFragment : Fragment() {
                 binding.imageView.load(data.serverResponseData.url) {
                     error(R.drawable.ic_load_error_vector)
                 }
-                binding.includeBottomSheet.bottomSheetDescriptionHeader.text =data.serverResponseData.title
-                binding.includeBottomSheet.bottomSheetDescription.text =data.serverResponseData.explanation
+                binding.includeBottomSheet.bottomSheetDescriptionHeader.text =
+                    data.serverResponseData.title
+                binding.includeBottomSheet.bottomSheetDescription.text =
+                    data.serverResponseData.explanation
 
             }
             is PODData.Loading -> {
@@ -111,13 +114,23 @@ class PODFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_bottom_bar,menu)
+        inflater.inflate(R.menu.menu_bottom_bar, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
-            R.id.app_bar_search -> Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_fav -> {
+                Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            }
+            R.id.app_bar_search -> {
+                Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show()
+            }
+            // у бургера id home
+            android.R.id.home -> {
+                activity?.let {
+                    BottomNavigationDrawerFragment.newInstance().show(it.supportFragmentManager, "tag")
+                }
+            }
         }
         return super.onOptionsItemSelected(item)
     }
