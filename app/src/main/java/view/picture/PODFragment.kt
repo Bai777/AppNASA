@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import chips.ChipsFragment
+import chips.SettingsFragment
 import coil.api.load
 import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentMainBinding
@@ -32,6 +32,7 @@ class PODFragment : Fragment() {
     private val viewModel: PODViewModel by lazy {
         ViewModelProvider(this).get(PODViewModel::class.java)
     }
+
 
 
     override fun onCreateView(
@@ -141,7 +142,7 @@ class PODFragment : Fragment() {
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, ChipsFragment.newInstance())
+                    .replace(R.id.container, SettingsFragment.newInstance())
                     .addToBackStack("").commit()
             }
             // у бургера id home

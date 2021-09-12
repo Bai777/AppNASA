@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="fabCradleVerticalOffset">0dp</dimen>
+    <dimen name="behaviorPeekHeightConstraintLayout">50dp</dimen>
+    <dimen name="viewBottomSheetLineLayoutWidth">25dp</dimen>
+    <dimen name="viewBottomSheetLineLayoutHeight">1dp</dimen>
+    <dimen name="viewBottomSheetLineLayoutMarginTop">5dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionHeaderMarginTop">5dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionHeaderPaddingStart">10dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionHeaderPaddingEnd">10dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionPaddingStart">10dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionPaddingEnd">10dp</dimen>
 </resources>

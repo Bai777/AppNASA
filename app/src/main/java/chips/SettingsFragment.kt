@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.appnasa.databinding.FragmentChipsBinding
-import view.picture.PODFragment
+import com.example.appnasa.databinding.FragmentSettingsBinding
 
-class ChipsFragment:Fragment() {
-    var _binding: FragmentChipsBinding? = null
-    val binding: FragmentChipsBinding
+
+class SettingsFragment:Fragment() {
+    var _binding: FragmentSettingsBinding? = null
+    val binding: FragmentSettingsBinding
         get() {
             return _binding!!
         }
@@ -20,7 +20,7 @@ class ChipsFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentChipsBinding.inflate(inflater)
+        _binding = FragmentSettingsBinding.inflate(inflater)
         return binding.root
     }
 
@@ -30,7 +30,7 @@ class ChipsFragment:Fragment() {
     }
 
     companion object {
-        fun newInstance() = ChipsFragment()
+        fun newInstance() = SettingsFragment()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
