@@ -9,4 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/marginBottomImageViewMars"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartImageViewMarsPassive"
+            android:layout_marginLeft="@dimen/marginLeftImageViewMarsPassive"
+            android:layout_marginEnd="@dimen/marginEndImageViewMarsPassive"
+            android:layout_marginRight="@dimen/marginRightImageViewMarsPassive"
+            android:src="@drawable/swipe_indicator_passive" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartImageViewMarsActive"
+            android:layout_marginLeft="@dimen/marginLeftImageViewMarsActive"
+            android:layout_marginEnd="@dimen/marginEndImageViewMarsActive"
+            android:layout_marginRight="@dimen/marginRightImageViewMarsActive"
+            android:src="@drawable/swipe_indicator_active" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartImageViewMarsPassive"
+            android:layout_marginLeft="@dimen/marginLeftImageViewMarsPassive"
+            android:layout_marginEnd="@dimen/marginEndImageViewMarsPassive"
+            android:layout_marginRight="@dimen/marginRightImageViewMarsPassive"
+            android:src="@drawable/swipe_indicator_passive" />
+    </LinearLayout>
+
 </FrameLayout>

@@ -10,4 +10,36 @@
     <dimen name="textViewBottomSheetDescriptionHeaderPaddingEnd">10dp</dimen>
     <dimen name="textViewBottomSheetDescriptionPaddingStart">10dp</dimen>
     <dimen name="textViewBottomSheetDescriptionPaddingEnd">10dp</dimen>
+    <dimen name="marginBottomImageViewEarth">20dp</dimen>
+    <dimen name="marginBottomImageViewMars">20dp</dimen>
+
+    <dimen name="marginStartImageViewEarthActive">7dp</dimen>
+    <dimen name="marginLeftImageViewEarthActive">7dp</dimen>
+    <dimen name="marginEndImageViewEarthActive">7dp</dimen>
+    <dimen name="marginRightImageViewEarthActive">7dp</dimen>
+    <dimen name="marginStartImageViewEarthPassive">7dp</dimen>
+    <dimen name="marginLeftImageViewEarthPassive">7dp</dimen>
+    <dimen name="marginEndImageViewEarthPassive">7dp</dimen>
+    <dimen name="marginRightImageViewEarthPassive">7dp</dimen>
+
+    <dimen name="marginStartImageViewMarsActive">7dp</dimen>
+    <dimen name="marginLeftImageViewMarsActive">7dp</dimen>
+    <dimen name="marginEndImageViewMarsActive">7dp</dimen>
+    <dimen name="marginRightImageViewMarsActive">7dp</dimen>
+    <dimen name="marginStartImageViewMarsPassive">7dp</dimen>
+    <dimen name="marginLeftImageViewMarsPassive">7dp</dimen>
+    <dimen name="marginEndImageViewMarsPassive">7dp</dimen>
+    <dimen name="marginRightImageViewMarsPassive">7dp</dimen>
+
+    <dimen name="marginStartImageViewSystemActive">7dp</dimen>
+    <dimen name="marginLeftImageViewSystemActive">7dp</dimen>
+    <dimen name="marginEndImageViewSystemActive">7dp</dimen>
+    <dimen name="marginRightImageViewSystemActive">7dp</dimen>
+    <dimen name="marginStartImageViewSystemPassive">7dp</dimen>
+    <dimen name="marginLeftImageViewSystemPassive">7dp</dimen>
+    <dimen name="marginEndImageViewSystemPassive">7dp</dimen>
+    <dimen name="marginRightImageViewSystemPassive">7dp</dimen>
+
+
+
 </resources>
