@@ -21,11 +21,12 @@
         <item name="textInputStyle">@style/AppTextField</item>
         <item name="materialCardViewStyle">@style/AppCard</item>
         <item name="buttonBarButtonStyle">@style/AppBottomNavigationView</item>
+        <item name="bottomNavigationStyle">@style/AppBottomNavigationView</item>
 
         <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
     </style>
 
-    <style name="AppBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+    <style name="AppBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
         <item name="backgroundTint">@color/pink_dark</item>
         <item name="itemTextColor">@color/orange</item>
         <item name="itemHorizontalTranslationEnabled">true</item>
@@ -86,12 +87,12 @@
 
 
     <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamily">cut</item>
+        <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
 
     <style name="AppShapeAppearance.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
-        <item name="cornerFamily">cut</item>
+        <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
 

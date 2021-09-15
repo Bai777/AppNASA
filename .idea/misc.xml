@@ -23,6 +23,7 @@
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.15052083333333333" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/font/roboto_mono.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_api.xml" value="0.13020833333333334" />
+        <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_api_bottom.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/bottom_cheet_layout.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.3333333333333333" />
@@ -37,6 +38,7 @@
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/menu/menu_bottom_bar.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.4466666666666667" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.16666666666666666" />
+        <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>

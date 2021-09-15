@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/action_earth"
+            android:icon="@drawable/ic_earth"
+            android:title="@string/action_menu_earth" />
+    <item
+            android:id="@+id/action_mars"
+            android:icon="@drawable/ic_mars"
+            android:title="@string/action_menu_mars" />
+    <item
+            android:id="@+id/action_system"
+            android:icon="@drawable/ic_system"
+            android:title="@string/action_menu_system" />
+</menu>

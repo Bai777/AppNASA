@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentSettingsBinding
-import view.picture.PODFragment
 
 
 class SettingsFragment:Fragment() {

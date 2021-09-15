@@ -12,4 +12,7 @@
     <string name="load">
 Load continues</string>
     <string name="floatingActionButton">FloatingActionButton</string>
+    <string name="action_menu_earth">Earth</string>
+    <string name="action_menu_mars">Mars</string>
+    <string name="action_menu_system">System</string>
 </resources>

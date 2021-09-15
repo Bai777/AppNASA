@@ -4,11 +4,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import api.ApiActivityBottom
 import chips.SettingsFragment
 import coil.api.load
 import com.example.appnasa.R
@@ -56,18 +56,7 @@ class PODFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendServerRequest()
         setBottomAppBar()
-        // попытка скролинга
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            binding.scroll.setOnScrollChangeListener() { it, y, u, i, o ->
-//                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-//                binding.fab.setImageDrawable(
-//                    ContextCompat.getDrawable(
-//                        requireContext(),
-//                        R.drawable.ic_back_fab
-//                    )
-//                )
-//            }
-//        }
+
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -77,25 +66,6 @@ class PODFragment : Fragment() {
 
         }
         setBottomSheet(binding.includeBottomSheet.bottomSheetContainer)
-        /* bottomSheetBehavior.addBottomSheetCallback(object :
-             BottomSheetBehavior.BottomSheetCallback() {
-             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                 when (newState) {
-                     BottomSheetBehavior.STATE_DRAGGING -> TODO("not implemented")
-                     BottomSheetBehavior.STATE_COLLAPSED -> TODO("not implemented")
-                     BottomSheetBehavior.STATE_EXPANDED -> TODO("not implemented")
-                     BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO("not implemented")
-                     BottomSheetBehavior.STATE_HIDDEN -> TODO("not implemented")
-                     BottomSheetBehavior.STATE_SETTLING -> TODO("not implemented")
-                 }
-             }
-
-             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                 TODO("not implemented")
-             }
-         })*/
-
-
     }
 
     private fun renderData(data: PODData) {
@@ -137,7 +107,7 @@ class PODFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_fav -> {
-                Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(context, ApiActivityBottom::class.java))
             }
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
