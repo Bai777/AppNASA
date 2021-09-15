@@ -19,11 +19,20 @@ class ViewPagerAdapter(private val fragmentManager: FragmentManager) :
     }
 
     override fun getItem(position: Int): Fragment {
-        return when(position){
-            0-> fragments[EARTH_FRAGMENT]
-            1->fragments[MARS_FRAGMENT]
-            2-> fragments[SYSTEM_FRAGMENT]
-            else->fragments[EARTH_FRAGMENT]
+        return when (position) {
+            0 -> fragments[EARTH_FRAGMENT]
+            1 -> fragments[MARS_FRAGMENT]
+            2 -> fragments[SYSTEM_FRAGMENT]
+            else -> fragments[EARTH_FRAGMENT]
+        }
+    }
+
+    override fun getPageTitle(position: Int): String {
+        return when (position) {
+            0 -> "EARTH"
+            1 -> "MARS"
+            2 -> "SYSTEM"
+            else -> "EARTH"
         }
     }
 }

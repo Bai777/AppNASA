@@ -14,5 +14,6 @@ class ApiActivity: AppCompatActivity() {
         setContentView(binding.root)
         binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
         binding.viewPager.setPageTransformer(true, ZoomOutPageTransformer())
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 }

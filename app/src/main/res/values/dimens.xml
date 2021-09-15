@@ -10,8 +10,9 @@
     <dimen name="textViewBottomSheetDescriptionHeaderPaddingEnd">10dp</dimen>
     <dimen name="textViewBottomSheetDescriptionPaddingStart">10dp</dimen>
     <dimen name="textViewBottomSheetDescriptionPaddingEnd">10dp</dimen>
-    <dimen name="marginBottomImageViewEarth">20dp</dimen>
-    <dimen name="marginBottomImageViewMars">20dp</dimen>
+    <dimen name="marginBottomImageViewEarth">100dp</dimen>
+    <dimen name="marginBottomImageViewMars">100dp</dimen>
+    <dimen name="marginBottomImageViewSystem">100dp</dimen>
 
     <dimen name="marginStartImageViewEarthActive">7dp</dimen>
     <dimen name="marginLeftImageViewEarthActive">7dp</dimen>
