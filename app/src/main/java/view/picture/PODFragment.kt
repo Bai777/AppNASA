@@ -72,6 +72,7 @@ class PODFragment : Fragment() {
         when (data) {
             is PODData.Success -> {
                 binding.imageView.load(data.serverResponseData.url) {
+                    placeholder(R.drawable.progress_animation)
                     error(R.drawable.ic_load_error_vector)
                 }
                 binding.includeBottomSheet.bottomSheetDescriptionHeader.text =
@@ -81,10 +82,12 @@ class PODFragment : Fragment() {
 
             }
             is PODData.Loading -> {
-                binding.main.showSnackBar(getString(R.string.load))
+                binding.imageView.load(R.drawable.progress_animation){
+
+                }
             }
             is PODData.Error -> {
-                binding.main.showSnackBar(getString(R.string.error))
+                error(R.drawable.ic_load_error_vector)
             }
         }
     }
