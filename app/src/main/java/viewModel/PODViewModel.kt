@@ -24,7 +24,7 @@ class PODViewModel(private val liveDataToObserve: MutableLiveData<PODData> = Mut
             PODData.Error(Throwable("Your API key is failed!!!"))
         }else
         {
-            retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey).enqueue(
+            retrofitImpl.api.getPictureOfTheDay(apiKey).enqueue(
                 object :Callback<PODServerResponseData>{
                     override fun onResponse(
                         call: Call<PODServerResponseData>,
