@@ -17,6 +17,7 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import utils.showSnackBar
 import view.MainActivity
+import view.example.FragmentExampleConstraintLayout
 import viewModel.PODData
 import viewModel.PODViewModel
 
@@ -113,7 +114,10 @@ class PODFragment : Fragment() {
                 startActivity(Intent(context, ApiActivityBottom::class.java))
             }
             R.id.app_bar_fav -> {
-
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, FragmentExampleConstraintLayout.newInstance())
+                    .addToBackStack("").commit()
             }
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
