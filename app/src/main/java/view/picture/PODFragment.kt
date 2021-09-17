@@ -109,8 +109,11 @@ class PODFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> {
+            R.id.action_api_activity->{
                 startActivity(Intent(context, ApiActivityBottom::class.java))
+            }
+            R.id.app_bar_fav -> {
+
             }
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
