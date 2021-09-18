@@ -23,6 +23,7 @@
         <item name="buttonBarButtonStyle">@style/AppBottomNavigationView</item>
         <item name="bottomNavigationStyle">@style/AppBottomNavigationView</item>
 
+
         <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
     </style>
 

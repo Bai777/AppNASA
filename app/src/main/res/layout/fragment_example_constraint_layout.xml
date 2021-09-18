@@ -114,4 +114,15 @@
         app:layout_constraintCircleRadius="350dp"
         app:layout_constraintCircleAngle="160"
         android:text="@string/example_button6"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineThreeVertical"
+        app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFive"
+        app:srcCompat="@drawable/ic_plus_fab" />
 </androidx.constraintlayout.widget.ConstraintLayout>

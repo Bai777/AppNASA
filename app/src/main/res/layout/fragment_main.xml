@@ -70,9 +70,9 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorAccent"
         android:contentDescription="@string/floatingActionButton"
         app:layout_anchor="@id/bottom_app_bar"
+        app:layout_behavior="view.example.FABFloatOnScroll"
         app:srcCompat="@drawable/ic_plus_fab"
         app:tint="#FFFFFF" />
 
