@@ -21,6 +21,17 @@ class FABFloatOnScroll : FloatingActionButton.Behavior() {
         type: Int,
         consumed: IntArray
     ) {
+        super.onNestedScroll(
+            coordinatorLayout,
+            child,
+            target,
+            dxConsumed,
+            dyConsumed,
+            dxUnconsumed,
+            dyUnconsumed,
+            type,
+            consumed
+        )
 
         if (dyConsumed > 0) {
             val layoutParams = child.layoutParams as CoordinatorLayout.LayoutParams
