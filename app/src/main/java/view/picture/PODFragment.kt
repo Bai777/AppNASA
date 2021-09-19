@@ -13,6 +13,7 @@ import chips.SettingsFragment
 import coil.api.load
 import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentMainBinding
+import com.example.appnasa.databinding.FragmentMainStartBinding
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import utils.showSnackBar
@@ -24,8 +25,8 @@ import viewModel.PODViewModel
 class PODFragment : Fragment() {
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
-    private var _binding: FragmentMainBinding? = null
-    val binding: FragmentMainBinding
+    private var _binding: FragmentMainStartBinding? = null
+    val binding: FragmentMainStartBinding
         get() {
             return _binding!!
         }
@@ -41,7 +42,7 @@ class PODFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater)
+        _binding = FragmentMainStartBinding.inflate(inflater)
         return binding.root
     }
 
