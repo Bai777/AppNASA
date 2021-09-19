@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
@@ -46,8 +48,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_no_photo_vector" />
-
+<!--            <Space-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1000dp"-->
+<!--                tools:ignore="MissingConstraints" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
 
     <include
@@ -75,5 +81,7 @@
         app:layout_behavior="view.example.FABFloatOnScroll"
         app:srcCompat="@drawable/ic_plus_fab"
         app:tint="#FFFFFF" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
