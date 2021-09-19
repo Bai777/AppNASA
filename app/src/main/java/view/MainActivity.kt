@@ -17,9 +17,5 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, PODFragment.newInstance())
                 .commit()
         }
-        val bottom_app_bar = findViewById<ConstraintLayout>(R.id.bottom_app_bar)
-        val fABFloatOnScroll = FABFloatOnScroll()
-
-        (bottom_app_bar.layoutParams as CoordinatorLayout.LayoutParams).behavior = fABFloatOnScroll
     }
 }

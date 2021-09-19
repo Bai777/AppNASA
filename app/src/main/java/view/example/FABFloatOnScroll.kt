@@ -1,15 +1,16 @@
 package view.example
 
+import android.content.Context
+import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.core.view.ViewCompat
-import com.example.appnasa.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class FABFloatOnScroll : FloatingActionButton.Behavior() {
+class FABFloatOnScroll constructor(
+    context: Context? = null, attrs: AttributeSet? = null) : FloatingActionButton.Behavior(context, attrs){
     override fun onNestedScroll(
         coordinatorLayout: CoordinatorLayout,
         child: FloatingActionButton,
