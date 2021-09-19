@@ -48,10 +48,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_no_photo_vector" />
-<!--            <Space-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="1000dp"-->
-<!--                tools:ignore="MissingConstraints" />-->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -69,6 +69,7 @@
         app:fabAlignmentMode="center"
         app:fabCradleVerticalOffset="@dimen/fabCradleVerticalOffset"
         app:hideOnScroll="true"
+        app:layout_behavior="view.example.FABFloatOnScroll"
         app:layout_scrollFlags="scroll|enterAlways"
         app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar" />
 
@@ -78,7 +79,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/floatingActionButton"
         app:layout_anchor="@id/bottom_app_bar"
-        app:layout_behavior="view.example.FABFloatOnScroll"
+
         app:srcCompat="@drawable/ic_plus_fab"
         app:tint="#FFFFFF" />
 
