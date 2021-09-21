@@ -1,10 +1,12 @@
 package view.example
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.transition.Slide
 import androidx.transition.TransitionManager
 import com.example.appnasa.databinding.FragmentExampleConstraintLayoutBinding
 
@@ -36,12 +38,16 @@ class FragmentExampleConstraintLayout: Fragment() {
     private var textIsVisible = false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        clickButtonVisibleText()
+
+    }
+
+    private fun clickButtonVisibleText() {
         binding.buttonSix.setOnClickListener {
-            TransitionManager.beginDelayedTransition(binding.exampleConstraintLayout)
+            TransitionManager.beginDelayedTransition(binding.exampleConstraintLayout, Slide(Gravity.END))
             textIsVisible = !textIsVisible
             binding.textViewExample.visibility = if (textIsVisible) View.VISIBLE else View.INVISIBLE
         }
-
     }
 
 }
