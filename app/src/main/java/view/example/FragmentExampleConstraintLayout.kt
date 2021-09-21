@@ -1,13 +1,14 @@
 package view.example
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.transition.Slide
-import androidx.transition.TransitionManager
+import androidx.transition.*
 import com.example.appnasa.databinding.FragmentExampleConstraintLayoutBinding
 
 class FragmentExampleConstraintLayout: Fragment() {
@@ -36,10 +37,26 @@ class FragmentExampleConstraintLayout: Fragment() {
     }
 
     private var textIsVisible = false
+    private var isExpanded = false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         clickButtonVisibleText()
+        scaleTypeImageView()
+    }
 
+    private fun scaleTypeImageView() {
+        binding.imageView.setOnClickListener {
+            isExpanded = !isExpanded
+            val set = TransitionSet()
+                .addTransition(ChangeBounds())
+                .addTransition(ChangeImageTransform())
+            TransitionManager.beginDelayedTransition(binding.exampleConstraintLayout, set)
+            binding.imageView.scaleType = if (isExpanded) {
+                ImageView.ScaleType.CENTER_CROP
+            } else {
+                ImageView.ScaleType.FIT_CENTER
+            }
+        }
     }
 
     private fun clickButtonVisibleText() {
