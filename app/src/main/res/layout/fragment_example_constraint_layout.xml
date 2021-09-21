@@ -6,128 +6,141 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrierHorizontalFirstTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="buttonOne, buttonTwo, buttonThree"
-        tools:ignore="NotSibling" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrierHorizontalTwoBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="imageView"
-        tools:ignore="NotSibling" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrierHorizontalFirstTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="buttonOne, buttonTwo, buttonThree"
+                tools:ignore="NotSibling" />
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineFirstHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineFirstVertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineSecondVertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineThreeVertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView"
-        android:layout_width="413dp"
-        android:layout_height="504dp"
-        app:layout_constraintBottom_toBottomOf="@+id/barrierHorizontalTwoBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineThreeVertical"
-        app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTwo"
-        app:srcCompat="@drawable/ic_telescope" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrierHorizontalTwoBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="imageView"
+                tools:ignore="NotSibling" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonOne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/example_button1"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineFirstHorizontal"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineFirstVertical"
-        app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineFirstHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/example_button2"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineFirstHorizontal"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineSecondVertical"
-        app:layout_constraintStart_toStartOf="@+id/guidelineSecondVertical" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineFirstVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/example_button3"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineFirstHorizontal"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineThreeVertical"
-        app:layout_constraintStart_toStartOf="@+id/guidelineThreeVertical" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineSecondVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonFour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintCircle="@id/imageView"
-        app:layout_constraintCircleRadius="350dp"
-        app:layout_constraintCircleAngle="200"
-        android:text="@string/example_button4"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineThreeVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonFive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintCircle="@id/imageView"
-        app:layout_constraintCircleRadius="350dp"
-        app:layout_constraintCircleAngle="180"
-        android:text="@string/example_button5"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:layout_width="413dp"
+                android:layout_height="504dp"
+                app:layout_constraintBottom_toBottomOf="@+id/barrierHorizontalTwoBottom"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineThreeVertical"
+                app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical"
+                app:layout_constraintTop_toBottomOf="@+id/buttonTwo"
+                app:srcCompat="@drawable/ic_telescope" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewExample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="@string/image_description_from_example"
+                app:layout_constraintBottom_toTopOf="@+id/buttonSix"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fabExample"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example_button1"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineFirstHorizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineFirstVertical"
+                app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example_button2"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineFirstHorizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineSecondVertical"
+                app:layout_constraintStart_toStartOf="@+id/guidelineSecondVertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example_button3"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineFirstHorizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineThreeVertical"
+                app:layout_constraintStart_toStartOf="@+id/guidelineThreeVertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example_button4"
+                app:layout_constraintCircle="@id/imageView"
+                app:layout_constraintCircleAngle="200"
+                app:layout_constraintCircleRadius="350dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example_button5"
+                app:layout_constraintCircle="@id/imageView"
+                app:layout_constraintCircleAngle="180"
+                app:layout_constraintCircleRadius="350dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/example_button6"
         app:layout_constraintCircle="@id/imageView"
-        app:layout_constraintCircleRadius="350dp"
         app:layout_constraintCircleAngle="160"
-        android:text="@string/example_button6"/>
+        app:layout_constraintCircleRadius="350dp"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="603dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabExample"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_behavior="view.example.FABHideOnScroll"
-        android:contentDescription="@string/floatingActionButton"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineThreeVertical"
-        app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintBottom_toTopOf="@+id/buttonFive"
-        app:srcCompat="@drawable/ic_plus_fab" />
+                android:id="@+id/fabExample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/floatingActionButton"
+                app:layout_behavior="view.example.FABHideOnScroll"
+                app:layout_constraintBottom_toTopOf="@+id/buttonFive"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineThreeVertical"
+                app:layout_constraintStart_toStartOf="@+id/guidelineFirstVertical"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@drawable/ic_plus_fab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

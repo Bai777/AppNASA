@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.transition.TransitionManager
 import com.example.appnasa.databinding.FragmentExampleConstraintLayoutBinding
 
 class FragmentExampleConstraintLayout: Fragment() {
@@ -32,9 +33,14 @@ class FragmentExampleConstraintLayout: Fragment() {
         fun newInstance() = FragmentExampleConstraintLayout()
     }
 
+    private var textIsVisible = false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.buttonSix.setOnClickListener {
+            TransitionManager.beginDelayedTransition(binding.exampleConstraintLayout)
+            textIsVisible = !textIsVisible
+            binding.textViewExample.visibility = if (textIsVisible) View.VISIBLE else View.INVISIBLE
+        }
 
     }
 
