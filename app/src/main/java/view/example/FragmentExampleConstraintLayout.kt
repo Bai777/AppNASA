@@ -1,6 +1,5 @@
 package view.example
 
-import android.graphics.Rect
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -9,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.transition.*
+import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentExampleConstraintLayoutBinding
 
 class FragmentExampleConstraintLayout: Fragment() {
@@ -34,14 +34,25 @@ class FragmentExampleConstraintLayout: Fragment() {
 
     companion object {
         fun newInstance() = FragmentExampleConstraintLayout()
+        private var textIsVisible = false
+        private var isExpanded = false
     }
 
-    private var textIsVisible = false
-    private var isExpanded = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         clickButtonVisibleText()
         scaleTypeImageView()
+        startAnimationAlongCurve()
+    }
+
+    private fun startAnimationAlongCurve() {
+        binding.buttonOne.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, FragmentIsTopAnimation.newInstance())
+                .addToBackStack("").commit()
+        }
     }
 
     private fun scaleTypeImageView() {
