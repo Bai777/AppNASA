@@ -6,8 +6,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/earthImageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/widthImageEarth"
+        android:layout_height="@dimen/heightImageEarth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,8 +16,8 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Земля"
-        android:textSize="35sp"
+        android:text="@string/earth"
+        android:textSize="@dimen/textSizeEarth"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/earthImageView"
         app:layout_constraintEnd_toStartOf="@+id/earthImageView"
@@ -27,7 +27,7 @@
         android:id="@+id/wikiImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="@dimen/marginImageViewWiki"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_wikipedia" />
@@ -36,7 +36,7 @@
         android:id="@+id/descriptionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Дополнительный текст"
+        android:text="@string/additional_text"
         android:textColor="#000"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/earthImageView"

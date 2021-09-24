@@ -23,5 +23,7 @@ Load continues</string>
     <string name="example_button5">Button5</string>
     <string name="example_button6">Button6</string>
     <string name="image_description_from_example">Image Description</string>
+    <string name="earth">Земля</string>
+    <string name="additional_text">Дополнительный текст</string>
 
 </resources>

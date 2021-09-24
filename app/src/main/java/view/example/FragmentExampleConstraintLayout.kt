@@ -45,10 +45,14 @@ class FragmentExampleConstraintLayout: Fragment() {
         scaleTypeImageView()
         startAnimationAlongCurve()
         startFragmentAnimationsActivityBonus()
+        startFragmentRecycleView()
+    }
+
+    private fun startFragmentRecycleView() {
         binding.buttonThree.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, FragmentRecyclerViewEarth.newInstance())
+                .replace(R.id.container, FragmentRecyclerView.newInstance())
                 .addToBackStack("").commit()
         }
     }

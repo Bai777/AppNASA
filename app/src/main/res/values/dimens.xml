@@ -41,6 +41,10 @@
     <dimen name="marginEndImageViewSystemPassive">7dp</dimen>
     <dimen name="marginRightImageViewSystemPassive">7dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="widthImageEarth">120dp</dimen>
+    <dimen name="heightImageEarth">120dp</dimen>
+    <dimen name="textSizeEarth">35sp</dimen>
+    <dimen name="marginImageViewWiki">15dp</dimen>
 
 
 </resources>
