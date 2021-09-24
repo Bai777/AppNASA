@@ -1,22 +1,15 @@
 package view.example
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.transition.*
 import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentExampleConstraintLayoutBinding
-import java.util.ArrayList
 
 class FragmentExampleConstraintLayout: Fragment() {
     var _binding: FragmentExampleConstraintLayoutBinding? = null
@@ -52,7 +45,12 @@ class FragmentExampleConstraintLayout: Fragment() {
         scaleTypeImageView()
         startAnimationAlongCurve()
         startFragmentAnimationsActivityBonus()
-
+        binding.buttonThree.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, FragmentRecyclerViewEarth.newInstance())
+                .addToBackStack("").commit()
+        }
     }
 
     private fun startFragmentAnimationsActivityBonus() {
