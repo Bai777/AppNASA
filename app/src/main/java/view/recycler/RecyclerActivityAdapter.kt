@@ -73,7 +73,7 @@ class RecyclerActivityAdapter(
 
     fun appendItem() {
         data.add(generateItem())
-        notifyDataSetChanged()
+        notifyItemInserted(itemCount - 1)
     }
 
     private fun generateItem() = Data("Mars", "")
@@ -86,15 +86,37 @@ class RecyclerActivityAdapter(
                 }
                 addItemImageView.setOnClickListener { addItem() }
                 removeItemImageView.setOnClickListener { removeItem() }
+                moveItemUp.setOnClickListener { moveUp() }
+                moveItemDown.setOnClickListener { moveDown() }
             }
         }
-        private fun addItem(){
-            data.add(layoutPosition, generateItem())
-            notifyDataSetChanged()
+
+        private fun moveUp() {
+            layoutPosition.takeIf { it > 1 }?.also {
+                data.removeAt(it).apply {
+                    data.add(it - 1, this)
+                }
+                notifyItemMoved(it, it - 1)
+            }
         }
-        private fun removeItem(){
+
+        private fun moveDown() {
+            layoutPosition.takeIf { it < itemCount - 1 }?.also {
+                data.removeAt(it).apply {
+                    data.add(it + 1, this)
+                }
+                notifyItemMoved(it, it + 1)
+            }
+        }
+
+        private fun addItem() {
+            data.add(layoutPosition, generateItem())
+            notifyItemInserted(layoutPosition)
+        }
+
+        private fun removeItem() {
             data.removeAt(layoutPosition)
-            notifyDataSetChanged()
+            notifyItemRemoved(layoutPosition)
         }
     }
 
