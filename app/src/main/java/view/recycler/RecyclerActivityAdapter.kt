@@ -10,7 +10,7 @@ import com.example.appnasa.databinding.FragmentRecyclerViewMarsBinding
 
 class RecyclerActivityAdapter(
     private var onListItemClickListener: OnListItemClickListener,
-    private var data: List<Data>
+    private var data: MutableList<Data>
 ) : RecyclerView.Adapter<BaseViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
@@ -53,7 +53,7 @@ class RecyclerActivityAdapter(
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-                (holder).bind(data[position])
+        (holder).bind(data[position])
     }
 
     override fun getItemCount(): Int {
@@ -71,13 +71,30 @@ class RecyclerActivityAdapter(
         }
     }
 
+    fun appendItem() {
+        data.add(generateItem())
+        notifyDataSetChanged()
+    }
+
+    private fun generateItem() = Data("Mars", "")
+
     inner class MarsViewHolder(view: View) : BaseViewHolder(view) {
         override fun bind(data: Data) {
             FragmentRecyclerViewMarsBinding.bind(itemView).apply {
                 marsImageView.setOnClickListener {
                     onListItemClickListener.onItemClick(data)
                 }
+                addItemImageView.setOnClickListener { addItem() }
+                removeItemImageView.setOnClickListener { removeItem() }
             }
+        }
+        private fun addItem(){
+            data.add(layoutPosition, generateItem())
+            notifyDataSetChanged()
+        }
+        private fun removeItem(){
+            data.removeAt(layoutPosition)
+            notifyDataSetChanged()
         }
     }
 

@@ -12,34 +12,38 @@ import view.recycler.OnListItemClickListener
 import view.recycler.RecyclerActivityAdapter
 import java.util.ArrayList
 
-class FragmentRecyclerView: ViewBindingFragment<FragmentRecyclerBinding>(FragmentRecyclerBinding::inflate){
+class FragmentRecyclerView :
+    ViewBindingFragment<FragmentRecyclerBinding>(FragmentRecyclerBinding::inflate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val data:MutableList<Data> = ArrayList()
-        repeat(10){
-            if (it%2 == 0){
-                data.add(Data("Earth"))
-            }else{
+        val data: MutableList<Data> = ArrayList()
+        repeat(10) {
+            if (it % 2 == 0) {
+                // data.add(Data("Earth"))
+            } else {
                 data.add(Data("Mars", ""))
             }
         }
-        data.add(0, Data( "Header"))
+        data.add(0, Data("Header"))
 
-
-
-        binding.recyclerView.adapter = RecyclerActivityAdapter(
-            object : OnListItemClickListener{
+        val adapter = RecyclerActivityAdapter(
+            object : OnListItemClickListener {
                 override fun onItemClick(date: Data) {
                     val myDialogFragment = MyDialogFragment()
                     val manager = requireActivity().supportFragmentManager
                     myDialogFragment.show(manager, "dialog")
                 }
-            }
-        ,data)
+            }, data
+        )
+        binding.recyclerView.adapter = adapter
+        binding.recyclerActivityFAB.setOnClickListener {
+            adapter.appendItem()
+        }
     }
 
     companion object {
         fun newInstance() = FragmentRecyclerView()
     }
+
+
 }
