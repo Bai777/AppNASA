@@ -5,7 +5,9 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnticipateOvershootInterpolator
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.transition.*
 import com.example.appnasa.R
@@ -38,6 +40,7 @@ class FragmentExampleConstraintLayout: Fragment() {
         private var isExpanded = false
     }
 
+    var flag = true
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,6 +49,83 @@ class FragmentExampleConstraintLayout: Fragment() {
         startAnimationAlongCurve()
         startFragmentAnimationsActivityBonus()
         startFragmentRecycleView()
+
+        binding.fabExample.setOnClickListener {
+            val constraintSet = ConstraintSet()
+            constraintSet.clone(binding.exampleConstraintLayout)
+
+            if (flag) {
+                constraintSet.connect(
+                    R.id.buttonOne,
+                    ConstraintSet.END,
+                    R.id.guidelineThreeVertical,
+                    ConstraintSet.START,
+                    0
+                )
+                constraintSet.connect(
+                    R.id.buttonOne,
+                    ConstraintSet.START,
+                    R.id.guidelineThreeVertical,
+                    ConstraintSet.START,
+                    0
+                )
+
+                constraintSet.connect(
+                    R.id.buttonThree,
+                    ConstraintSet.END,
+                    R.id.guidelineFirstVertical,
+                    ConstraintSet.START,
+                    0
+                )
+                constraintSet.connect(
+                    R.id.buttonThree,
+                    ConstraintSet.START,
+                    R.id.guidelineFirstVertical,
+                    ConstraintSet.START,
+                    0
+                )
+            } else {
+                constraintSet.connect(
+                    R.id.buttonOne,
+                    ConstraintSet.END,
+                    R.id.guidelineFirstVertical,
+                    ConstraintSet.START,
+                    0
+                )
+                constraintSet.connect(
+                    R.id.buttonOne,
+                    ConstraintSet.START,
+
+                    R.id.guidelineFirstVertical,
+                    ConstraintSet.START,
+                    0
+                )
+
+                constraintSet.connect(
+                    R.id.buttonThree,
+                    ConstraintSet.END,
+                    R.id.guidelineThreeVertical,
+                    ConstraintSet.START,
+                    0
+                )
+                constraintSet.connect(
+                    R.id.buttonThree,
+                    ConstraintSet.START,
+                    R.id.guidelineThreeVertical,
+                    ConstraintSet.START,
+                    0
+                )
+            }
+            flag = !flag
+            val transition = android.transition.ChangeBounds()
+            transition.interpolator = AnticipateOvershootInterpolator(2.0f)
+            transition.duration = 1000
+            android.transition.TransitionManager.beginDelayedTransition(
+                binding.exampleConstraintLayout,
+                transition
+            )
+            constraintSet.applyTo(binding.exampleConstraintLayout)
+        }
     }
 
     private fun startFragmentRecycleView() {
