@@ -10,7 +10,7 @@ import com.example.appnasa.databinding.FragmentRecyclerViewMarsBinding
 
 class RecyclerActivityAdapter(
     private var onListItemClickListener: OnListItemClickListener,
-    private var data: MutableList<Data>
+    private var data: MutableList<Pair<Data, Boolean>>
 ) : RecyclerView.Adapter<BaseViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
@@ -47,7 +47,7 @@ class RecyclerActivityAdapter(
     override fun getItemViewType(position: Int): Int {
         return when {
             position == 0 -> TYPE_HEADER
-            data[position].someDescription.isNullOrBlank() -> TYPE_MARS
+            data[position].first.someDescription.isNullOrBlank() -> TYPE_MARS
             else -> TYPE_EARTH
         }
     }
@@ -61,34 +61,44 @@ class RecyclerActivityAdapter(
     }
 
     inner class EarthViewHolder(view: View) : BaseViewHolder(view) {
-        override fun bind(data: Data) {
+        override fun bind(pair: Pair<Data, Boolean>) {
             FragmentRecyclerViewEarthBinding.bind(itemView).apply {
-                descriptionTextView.text = data.someDescription
+                descriptionTextView.text = pair.first.someDescription
                 wikiImageView.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(pair.first)
                 }
             }
         }
     }
 
     fun appendItem() {
-        data.add(generateItem())
+        data.add(Pair(generateItem(), false))
         notifyItemInserted(itemCount - 1)
     }
 
     private fun generateItem() = Data("Mars", "")
 
     inner class MarsViewHolder(view: View) : BaseViewHolder(view) {
-        override fun bind(data: Data) {
+        override fun bind(pair: Pair<Data, Boolean>) {
             FragmentRecyclerViewMarsBinding.bind(itemView).apply {
                 marsImageView.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(pair.first)
                 }
                 addItemImageView.setOnClickListener { addItem() }
                 removeItemImageView.setOnClickListener { removeItem() }
                 moveItemUp.setOnClickListener { moveUp() }
                 moveItemDown.setOnClickListener { moveDown() }
+                marsTextView.setOnClickListener { toogleText() }
+                marsDescriptionTextView.visibility = if (pair.second) View.VISIBLE else View.GONE
+
             }
+        }
+
+        private fun toogleText() {
+            data[layoutPosition] = data[layoutPosition].let {
+                it.first to !it.second
+            }
+            notifyItemChanged(layoutPosition)
         }
 
         private fun moveUp() {
@@ -110,7 +120,7 @@ class RecyclerActivityAdapter(
         }
 
         private fun addItem() {
-            data.add(layoutPosition, generateItem())
+            data.add(layoutPosition, Pair(generateItem(), false))
             notifyItemInserted(layoutPosition)
         }
 
@@ -120,11 +130,13 @@ class RecyclerActivityAdapter(
         }
     }
 
+
+
     inner class HeaderViewHolder(view: View) : BaseViewHolder(view) {
-        override fun bind(data: Data) {
+        override fun bind(pair: Pair<Data, Boolean>) {
             FragmentRecyclerItemHeaderBinding.bind(itemView).apply {
                 root.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(pair.first)
                 }
             }
         }

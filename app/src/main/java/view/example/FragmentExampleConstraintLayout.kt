@@ -49,7 +49,10 @@ class FragmentExampleConstraintLayout: Fragment() {
         startAnimationAlongCurve()
         startFragmentAnimationsActivityBonus()
         startFragmentRecycleView()
+        movieAnimationByttons()
+    }
 
+    private fun movieAnimationByttons() {
         binding.fabExample.setOnClickListener {
             val constraintSet = ConstraintSet()
             constraintSet.clone(binding.exampleConstraintLayout)

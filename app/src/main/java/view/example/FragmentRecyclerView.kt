@@ -16,15 +16,17 @@ class FragmentRecyclerView :
     ViewBindingFragment<FragmentRecyclerBinding>(FragmentRecyclerBinding::inflate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val data: MutableList<Data> = ArrayList()
+        val data: MutableList<Pair<Data, Boolean>> = ArrayList()
         repeat(10) {
             if (it % 2 == 0) {
                 // data.add(Data("Earth"))
             } else {
-                data.add(Data("Mars", ""))
+                data.add(Pair(Data("Mars", ""), false))
             }
         }
-        data.add(0, Data("Header"))
+
+
+        data.add(0, Pair(Data("Header"), false))
 
         val adapter = RecyclerActivityAdapter(
             object : OnListItemClickListener {
