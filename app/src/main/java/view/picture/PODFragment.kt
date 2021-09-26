@@ -12,11 +12,9 @@ import api.ApiActivityBottom
 import chips.SettingsFragment
 import coil.api.load
 import com.example.appnasa.R
-import com.example.appnasa.databinding.FragmentMainBinding
 import com.example.appnasa.databinding.FragmentMainStartBinding
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import utils.showSnackBar
 import view.MainActivity
 import view.example.FragmentExampleConstraintLayout
 import viewModel.PODData

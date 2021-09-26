@@ -1,8 +1,11 @@
 package view.recycler
 
+import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.MotionEventCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appnasa.databinding.FragmentRecyclerItemHeaderBinding
 import com.example.appnasa.databinding.FragmentRecyclerViewEarthBinding
@@ -10,8 +13,9 @@ import com.example.appnasa.databinding.FragmentRecyclerViewMarsBinding
 
 class RecyclerActivityAdapter(
     private var onListItemClickListener: OnListItemClickListener,
+    private var dragListener: OnStartDragListener,
     private var data: MutableList<Pair<Data, Boolean>>
-) : RecyclerView.Adapter<BaseViewHolder>() {
+) : RecyclerView.Adapter<BaseViewHolder>(), ItemTouchHelperAdapter {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
             TYPE_EARTH -> {
@@ -78,7 +82,7 @@ class RecyclerActivityAdapter(
 
     private fun generateItem() = Data("Mars", "")
 
-    inner class MarsViewHolder(view: View) : BaseViewHolder(view) {
+    inner class MarsViewHolder(view: View) : BaseViewHolder(view), ItemTouchHelperViewHolder {
         override fun bind(pair: Pair<Data, Boolean>) {
             FragmentRecyclerViewMarsBinding.bind(itemView).apply {
                 marsImageView.setOnClickListener {
@@ -90,7 +94,12 @@ class RecyclerActivityAdapter(
                 moveItemDown.setOnClickListener { moveDown() }
                 marsTextView.setOnClickListener { toogleText() }
                 marsDescriptionTextView.visibility = if (pair.second) View.VISIBLE else View.GONE
-
+                dragHandleImageView.setOnTouchListener { view, event ->
+                    if (MotionEventCompat.getActionMasked(event)==MotionEvent.ACTION_DOWN){
+                        dragListener.onStartDrag(this@MarsViewHolder)
+                    }
+                    false
+                }
             }
         }
 
@@ -128,8 +137,15 @@ class RecyclerActivityAdapter(
             data.removeAt(layoutPosition)
             notifyItemRemoved(layoutPosition)
         }
-    }
 
+        override fun onItemSelected() {
+            itemView.setBackgroundColor(Color.LTGRAY)
+        }
+
+        override fun onItemClear() {
+            itemView.setBackgroundColor(0)
+        }
+    }
 
 
     inner class HeaderViewHolder(view: View) : BaseViewHolder(view) {
@@ -146,6 +162,23 @@ class RecyclerActivityAdapter(
         private const val TYPE_EARTH = 0
         private const val TYPE_MARS = 1
         private const val TYPE_HEADER = 2
+    }
+
+    override fun onItemMove(fromPosition: Int, toPosition: Int) {
+        data.removeAt(fromPosition).apply {
+            data.add(if (toPosition > fromPosition) toPosition - 1 else toPosition, this)
+        }
+        notifyItemMoved(fromPosition, toPosition)
+
+    }
+
+    override fun onItemDismiss(position: Int) {
+       data.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    interface OnStartDragListener{
+        fun onStartDrag(viewHolder: RecyclerView.ViewHolder)
     }
 
 }

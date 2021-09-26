@@ -25,5 +25,6 @@ Load continues</string>
     <string name="image_description_from_example">Image Description</string>
     <string name="earth">Земля</string>
     <string name="additional_text">Дополнительный текст</string>
+    <string name="headerTextRecycleItem">Список планет</string>
 
 </resources>
