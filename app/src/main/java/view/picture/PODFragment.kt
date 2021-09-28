@@ -1,8 +1,10 @@
 package view.picture
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
 import android.text.SpannableString
 import android.view.*
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -78,18 +80,19 @@ class PODFragment : Fragment() {
                     error(R.drawable.ic_load_error_vector)
                 }
 
+                data.serverResponseData.title?.let {
+                    binding.includeBottomSheet.bottomSheetDescriptionHeader.text = it
+                    binding.includeBottomSheet.bottomSheetDescriptionHeader.typeface =
+                        Typeface.createFromAsset(requireActivity().assets, "font/FontyRegularFonty-lRey.ttf")
+                }
 
-                binding.includeBottomSheet.bottomSheetDescriptionHeader.text =
-                    data.serverResponseData.title
-                val spannable = SpannableString(data.serverResponseData.title)
-                spannable.setSpan(
-                    BulletPointSpan(gapWidthPx, accentColor),
-                    /* start index */ 9, /* end index */ 18,
-                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-                myTextView.text = spannable
+                data.serverResponseData.explanation?.let {
+                    binding.includeBottomSheet.bottomSheetDescription.text = it
+                    binding.includeBottomSheet.bottomSheetDescription.typeface =
+                        Typeface.createFromAsset(requireActivity().assets, "font/FontyRegularFonty-lRey.ttf")
+                }
 
-                binding.includeBottomSheet.bottomSheetDescription.text =
-                    data.serverResponseData.explanation
+
 
             }
             is PODData.Loading -> {

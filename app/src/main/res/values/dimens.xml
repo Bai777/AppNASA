@@ -45,6 +45,8 @@
     <dimen name="heightImageEarth">120dp</dimen>
     <dimen name="textSizeEarth">35sp</dimen>
     <dimen name="marginImageViewWiki">15dp</dimen>
+    <dimen name="bottomSheetDescriptionTextSize">30sp</dimen>
+    <dimen name="bottomSheetTitleTextSize">40sp</dimen>
 
 
 </resources>
