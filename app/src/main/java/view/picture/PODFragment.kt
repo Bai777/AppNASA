@@ -3,6 +3,7 @@ package view.picture
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
 import android.view.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -13,6 +14,7 @@ import chips.SettingsFragment
 import coil.api.load
 import com.example.appnasa.R
 import com.example.appnasa.databinding.FragmentMainStartBinding
+import com.example.appnasa.databinding.FragmentRecyclerViewMarsBinding
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import view.MainActivity
@@ -75,8 +77,17 @@ class PODFragment : Fragment() {
                     placeholder(R.drawable.progress_animation)
                     error(R.drawable.ic_load_error_vector)
                 }
+
+
                 binding.includeBottomSheet.bottomSheetDescriptionHeader.text =
                     data.serverResponseData.title
+                val spannable = SpannableString(data.serverResponseData.title)
+                spannable.setSpan(
+                    BulletPointSpan(gapWidthPx, accentColor),
+                    /* start index */ 9, /* end index */ 18,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                myTextView.text = spannable
+
                 binding.includeBottomSheet.bottomSheetDescription.text =
                     data.serverResponseData.explanation
 

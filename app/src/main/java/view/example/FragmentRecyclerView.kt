@@ -25,8 +25,6 @@ class FragmentRecyclerView :
                 data.add(Pair(Data("Mars", ""), false))
             }
         }
-
-
         data.add(0, Pair(Data("Header", ""), false))
 
         val adapter = RecyclerActivityAdapter(

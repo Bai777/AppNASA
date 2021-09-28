@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.MotionEventCompat
 import androidx.recyclerview.widget.RecyclerView
+import coil.api.load
 import com.example.appnasa.databinding.FragmentRecyclerItemHeaderBinding
 import com.example.appnasa.databinding.FragmentRecyclerViewEarthBinding
 import com.example.appnasa.databinding.FragmentRecyclerViewMarsBinding
@@ -85,6 +86,7 @@ class RecyclerActivityAdapter(
     inner class MarsViewHolder(view: View) : BaseViewHolder(view), ItemTouchHelperViewHolder {
         override fun bind(pair: Pair<Data, Boolean>) {
             FragmentRecyclerViewMarsBinding.bind(itemView).apply {
+
                 marsImageView.setOnClickListener {
                     onListItemClickListener.onItemClick(pair.first)
                 }
