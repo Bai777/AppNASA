@@ -95,14 +95,16 @@ class PODFragment : Fragment() {
                 }
 
                 data.serverResponseData.explanation?.let {
-                    val textBottomSheetDescription: TextView =
-                        binding.includeBottomSheet.bottomSheetDescription
-                    val spannable = SpannableStringBuilder(it)
+                    val spannableStart = SpannableStringBuilder(it)
+                    binding.includeBottomSheet.bottomSheetDescription.setText(spannableStart, TextView.BufferType.EDITABLE)
+                    val spannable = binding.includeBottomSheet.bottomSheetDescription.text as SpannableStringBuilder
                     spannable.setSpan(
                         ForegroundColorSpan(resources.getColor(R.color.teal_200)),
                         0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
                     )
-                    textBottomSheetDescription.text = spannable
+//                    spannable.setSpan(TypefaceSpan(resources.getFont(R.font.alfa_slab_one)),
+//                    0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+
                 }
 
 
