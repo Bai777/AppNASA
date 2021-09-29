@@ -2,17 +2,24 @@ package view.picture
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.TypefaceSpan
 import android.view.*
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.provider.FontRequest
+import androidx.core.provider.FontsContractCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import api.ApiActivityBottom
@@ -84,31 +91,93 @@ class PODFragment : Fragment() {
                 }
 
                 data.serverResponseData.title?.let {
-                    val textBottomSheetTitle: TextView =
-                        binding.includeBottomSheet.bottomSheetDescriptionHeader
-                    val spannable = SpannableStringBuilder(it)
+                    val spannableStart = SpannableStringBuilder(it)
+                    binding.includeBottomSheet.bottomSheetDescriptionHeader.setText(
+                        spannableStart,
+                        TextView.BufferType.EDITABLE
+                    )
+                    val spannable =
+                        binding.includeBottomSheet.bottomSheetDescriptionHeader.text as SpannableStringBuilder
                     spannable.setSpan(
                         ForegroundColorSpan(resources.getColor(R.color.color_blue)),
                         0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
                     )
-                    textBottomSheetTitle.text = spannable
+
+                    val request = FontRequest(
+                        "com.google.android.gms.fonts",
+                        "com.google.android.gms", "Architects Daughter",
+                        R.array.com_google_android_gms_fonts_certs
+                    )
+
+                    val fontCallback = object: FontsContractCompat.FontRequestCallback() {
+                        override fun onTypefaceRetrieved(typeface: Typeface?) {
+                            super.onTypefaceRetrieved(typeface)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                                typeface?.let {
+                                    spannable.setSpan(
+                                        TypefaceSpan(it),
+                                        0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    FontsContractCompat.requestFont(requireContext(), request, fontCallback,
+                        Handler(Looper.getMainLooper())
+                    )
                 }
 
                 data.serverResponseData.explanation?.let {
                     val spannableStart = SpannableStringBuilder(it)
-                    binding.includeBottomSheet.bottomSheetDescription.setText(spannableStart, TextView.BufferType.EDITABLE)
-                    val spannable = binding.includeBottomSheet.bottomSheetDescription.text as SpannableStringBuilder
+                    binding.includeBottomSheet.bottomSheetDescription.setText(
+                        spannableStart,
+                        TextView.BufferType.EDITABLE
+                    )
+                    val spannable =
+                        binding.includeBottomSheet.bottomSheetDescription.text as SpannableStringBuilder
                     spannable.setSpan(
                         ForegroundColorSpan(resources.getColor(R.color.teal_200)),
                         0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
                     )
-//                    spannable.setSpan(TypefaceSpan(resources.getFont(R.font.alfa_slab_one)),
-//                    0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                    spannable.setSpan(
+                        ResourcesCompat.getFont(requireContext(), R.font.architects_daughter),
+                        0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+                    )
+//                    spannable.setSpan(
+//                        BackgroundColorSpan(resources.getColor(R.color.textColorSecondary)),
+//                        1, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+//                    )
 
+                    val request = FontRequest(
+                        "com.google.android.gms.fonts",
+                        "com.google.android.gms", "Architects Daughter",
+                        R.array.com_google_android_gms_fonts_certs
+                    )
+
+                    val fontCallback = object: FontsContractCompat.FontRequestCallback() {
+                        override fun onTypefaceRetrieved(typeface: Typeface?) {
+                            super.onTypefaceRetrieved(typeface)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                                typeface?.let {
+                                    spannable.setSpan(
+                                        TypefaceSpan(it),
+                                        0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    FontsContractCompat.requestFont(requireContext(), request, fontCallback,
+                        Handler(Looper.getMainLooper())
+                    )
+
+                    }
                 }
 
 
-            }
+
             is PODData.Loading -> {
                 binding.imageView.load(R.drawable.progress_animation) {
 

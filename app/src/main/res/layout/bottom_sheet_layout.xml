@@ -42,6 +42,8 @@
         android:paddingStart="@dimen/textViewBottomSheetDescriptionPaddingStart"
         android:paddingEnd="@dimen/textViewBottomSheetDescriptionPaddingEnd"
         android:textSize="@dimen/bottomSheetDescriptionTextSize"
+        android:hyphenationFrequency="normal"
+        android:breakStrategy="balanced"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_description_header"
