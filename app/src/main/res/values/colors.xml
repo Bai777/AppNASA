@@ -33,4 +33,6 @@
     <color name="text_field_background">#3E1950</color>
     <color name="colorAccent40Alfa">#66AA3535</color>
     <color name="colorFAB">#2196F3</color>
+
+    <color name="myColor">#FFfff3e0</color>
 </resources>
