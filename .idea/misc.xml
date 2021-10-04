@@ -22,7 +22,7 @@
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/ic_telescope.xml" value="0.15052083333333333" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/ic_wikipedia.xml" value="0.15052083333333333" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/progress_animation.xml" value="0.10833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/splash_background_drawable.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/splash_background_drawable.xml" value="0.12" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.15052083333333333" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.15052083333333333" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/font/alfa_slab_one.xml" value="0.10462962962962963" />
@@ -34,6 +34,7 @@
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_api.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_api_bottom.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/activity_splash.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/bottom_cheet_layout.xml" value="0.13020833333333334" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.3333333333333333" />
         <entry key="..\:/AndroidStudioProjects/AppNASA/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.1329479768786127" />

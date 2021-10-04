@@ -69,16 +69,17 @@ class PODFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendServerRequest()
         setBottomAppBar()
+        startWiki()
+        setBottomSheet(binding.includeBottomSheet.bottomSheetContainer)
+    }
 
+    private fun startWiki() {
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
                     Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
-
-
         }
-        setBottomSheet(binding.includeBottomSheet.bottomSheetContainer)
     }
 
     @SuppressLint("NewApi")
@@ -144,10 +145,6 @@ class PODFragment : Fragment() {
                         ResourcesCompat.getFont(requireContext(), R.font.architects_daughter),
                         0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
                     )
-//                    spannable.setSpan(
-//                        BackgroundColorSpan(resources.getColor(R.color.textColorSecondary)),
-//                        1, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-//                    )
 
                     val request = FontRequest(
                         "com.google.android.gms.fonts",
