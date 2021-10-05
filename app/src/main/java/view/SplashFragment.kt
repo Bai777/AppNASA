@@ -1,10 +1,12 @@
 package view
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.animation.LinearInterpolator
+import com.example.appnasa.R
 import com.example.appnasa.databinding.ActivitySplashBinding
+import view.picture.PODFragment
 
 class SplashFragment : ViewBindingFragment<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
    lateinit var handler: Handler
@@ -12,9 +14,15 @@ class SplashFragment : ViewBindingFragment<ActivitySplashBinding>(ActivitySplash
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        binding.imageView.animate().rotationBy(1000f)
+            .setInterpolator(LinearInterpolator()).duration = 2000
+
         handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
-            startActivity(Intent(context, MainActivity::class.java))
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, PODFragment.newInstance())
+                .commit()
         }, 2000)
     }
 

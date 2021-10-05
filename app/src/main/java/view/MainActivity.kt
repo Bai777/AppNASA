@@ -3,7 +3,6 @@ package view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appnasa.R
-import view.picture.PODFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,11 +15,4 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, SplashFragment.newInstance()).commit()
         }
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.container, PODFragment.newInstance())
-//            .commit()
-//    }
 }

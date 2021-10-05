@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appnasa.R
 import com.example.appnasa.databinding.ActivityApiBottomBinding
-import view.picture.PODFragment
 
 class ApiActivityBottom : AppCompatActivity() {
 
