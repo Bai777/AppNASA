@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, PODFragment.newInstance())
-            .commit()
-    }
+//    override fun onResume() {
+//        super.onResume()
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.container, PODFragment.newInstance())
+//            .commit()
+//    }
 }
