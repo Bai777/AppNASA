@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fabCradleVerticalOffset">0dp</dimen>
+    <dimen name="behaviorPeekHeightConstraintLayout">50dp</dimen>
+    <dimen name="viewBottomSheetLineLayoutWidth">25dp</dimen>
+    <dimen name="viewBottomSheetLineLayoutHeight">1dp</dimen>
+    <dimen name="viewBottomSheetLineLayoutMarginTop">5dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionHeaderMarginTop">5dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionHeaderPaddingStart">10dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionHeaderPaddingEnd">10dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionPaddingStart">10dp</dimen>
+    <dimen name="textViewBottomSheetDescriptionPaddingEnd">10dp</dimen>
+    <dimen name="marginBottomImageViewEarth">100dp</dimen>
+    <dimen name="marginBottomImageViewMars">100dp</dimen>
+    <dimen name="marginBottomImageViewSystem">100dp</dimen>
+
+    <dimen name="marginStartImageViewEarthActive">7dp</dimen>
+    <dimen name="marginLeftImageViewEarthActive">7dp</dimen>
+    <dimen name="marginEndImageViewEarthActive">7dp</dimen>
+    <dimen name="marginRightImageViewEarthActive">7dp</dimen>
+    <dimen name="marginStartImageViewEarthPassive">7dp</dimen>
+    <dimen name="marginLeftImageViewEarthPassive">7dp</dimen>
+    <dimen name="marginEndImageViewEarthPassive">7dp</dimen>
+    <dimen name="marginRightImageViewEarthPassive">7dp</dimen>
+
+    <dimen name="marginStartImageViewMarsActive">7dp</dimen>
+    <dimen name="marginLeftImageViewMarsActive">7dp</dimen>
+    <dimen name="marginEndImageViewMarsActive">7dp</dimen>
+    <dimen name="marginRightImageViewMarsActive">7dp</dimen>
+    <dimen name="marginStartImageViewMarsPassive">7dp</dimen>
+    <dimen name="marginLeftImageViewMarsPassive">7dp</dimen>
+    <dimen name="marginEndImageViewMarsPassive">7dp</dimen>
+    <dimen name="marginRightImageViewMarsPassive">7dp</dimen>
+
+    <dimen name="marginStartImageViewSystemActive">7dp</dimen>
+    <dimen name="marginLeftImageViewSystemActive">7dp</dimen>
+    <dimen name="marginEndImageViewSystemActive">7dp</dimen>
+    <dimen name="marginRightImageViewSystemActive">7dp</dimen>
+    <dimen name="marginStartImageViewSystemPassive">7dp</dimen>
+    <dimen name="marginLeftImageViewSystemPassive">7dp</dimen>
+    <dimen name="marginEndImageViewSystemPassive">7dp</dimen>
+    <dimen name="marginRightImageViewSystemPassive">7dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="widthImageEarth">120dp</dimen>
+    <dimen name="heightImageEarth">120dp</dimen>
+    <dimen name="textSizeEarth">35sp</dimen>
+    <dimen name="marginImageViewWiki">15dp</dimen>
+    <dimen name="bottomSheetDescriptionTextSize">30sp</dimen>
+    <dimen name="bottomSheetTitleTextSize">40sp</dimen>
+
+
+</resources>

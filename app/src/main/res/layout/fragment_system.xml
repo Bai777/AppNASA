@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:srcCompat="@drawable/bg_system"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/marginBottomImageViewSystem"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartImageViewSystemPassive"
+            android:layout_marginLeft="@dimen/marginLeftImageViewSystemPassive"
+            android:layout_marginEnd="@dimen/marginEndImageViewSystemPassive"
+            android:layout_marginRight="@dimen/marginRightImageViewSystemPassive"
+            android:src="@drawable/swipe_indicator_passive" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartImageViewSystemPassive"
+            android:layout_marginLeft="@dimen/marginLeftImageViewSystemPassive"
+            android:layout_marginEnd="@dimen/marginEndImageViewSystemPassive"
+            android:layout_marginRight="@dimen/marginRightImageViewSystemPassive"
+            android:src="@drawable/swipe_indicator_passive" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartImageViewSystemActive"
+            android:layout_marginLeft="@dimen/marginLeftImageViewSystemActive"
+            android:layout_marginEnd="@dimen/marginEndImageViewSystemActive"
+            android:layout_marginRight="@dimen/marginRightImageViewSystemActive"
+            android:src="@drawable/swipe_indicator_active" />
+    </LinearLayout>
+
+</FrameLayout>

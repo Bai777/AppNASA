@@ -7,4 +7,32 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="color_gray">#66000000</color>
+    <color name="color_blue">#FF3700B3</color>
+    <color name="color_red">#FFD50000</color>
+
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#0069c0</color>
+    <color name="colorAccent">#6ec6ff</color>
+    <color name="textColorPrimary">#2196f3</color>
+    <color name="textColorSecondary">#000000</color>
+
+    <color name="green">#00e676</color>
+    <color name="light_gray">#efefef</color>
+    <color name="orange">#ffb74d</color>
+
+    <color name="pink">#ff80ab</color>
+    <color name="pink_dark">#c94f7c</color>
+    <color name="pinkLight">#ffb2dd</color>
+    <color name="bottomSheetLayoutConstraintLayout">#f6f6fa</color>
+    <color name="viewBottomSheetLineLayoutBackground">#663b4351</color>
+    <color name="textViewBottomSheetDescriptionHeaderTextColor">#000</color>
+
+    <color name="background">#D5E9E6</color>
+    <color name="text_field_background">#3E1950</color>
+    <color name="colorAccent40Alfa">#66AA3535</color>
+    <color name="colorFAB">#2196F3</color>
+
+    <color name="myColor">#FFfff3e0</color>
 </resources>

@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">AppNASA</string>
+
+    <string name="photo_of_the_day_stub">Photo of the day</string>
+    <string name="search_wiki">Найти в Википедии</string>
+    <string name="wiki_helper_text">Поищите термин в википедии</string>
+    <string name="favourite">favourite</string>
+    <string name="telescope">telescope</string>
+    <string name="settings">settings</string>
+    <string name="search">Search</string>
+
+    <string name="error">Something went wrong</string>
+    <string name="load">
+Load continues</string>
+    <string name="floatingActionButton">FloatingActionButton</string>
+    <string name="action_menu_earth">Earth</string>
+    <string name="action_menu_mars">Mars</string>
+    <string name="action_menu_system">System</string>
+    <string name="example_button1">Button1</string>
+    <string name="example_button2">Button2</string>
+    <string name="example_button3">Button3</string>
+    <string name="example_button4">Button4</string>
+    <string name="example_button5">Button5</string>
+    <string name="example_button6">Button6</string>
+    <string name="image_description_from_example">Image Description</string>
+    <string name="earth">Земля</string>
+    <string name="additional_text">Дополнительный текст</string>
+    <string name="headerTextRecycleItem">Список планет</string>
+
 </resources>
