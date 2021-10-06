@@ -50,7 +50,6 @@ class FragmentExampleConstraintLayout: Fragment() {
     }
 
     var flag = true
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         clickButtonVisibleText()
