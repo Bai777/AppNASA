@@ -14,6 +14,7 @@ class SplashFragment : ViewBindingFragment<ActivitySplashBinding>(ActivitySplash
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.imageView.animate().rotationBy(1000f)
             .setInterpolator(LinearInterpolator()).duration = 2000
 
@@ -23,11 +24,6 @@ class SplashFragment : ViewBindingFragment<ActivitySplashBinding>(ActivitySplash
                 .replace(R.id.container, PODFragment.newInstance())
                 .commit()
         }, 2000)
-    }
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     override fun onDestroy() {
