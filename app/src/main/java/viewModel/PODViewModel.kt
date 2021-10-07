@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.appnasa.BuildConfig
 import repository.PODRetrofitImpl
-import repository.PODServerResponseData
+import repository.dto.PODServerResponseData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

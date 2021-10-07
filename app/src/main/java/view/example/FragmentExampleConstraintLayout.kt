@@ -16,9 +16,6 @@ import smartdevelop.ir.eram.showcaseviewlib.GuideView
 import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
 import smartdevelop.ir.eram.showcaseviewlib.config.Gravity
 import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener
-import android.content.SharedPreferences
-
-
 
 
 class FragmentExampleConstraintLayout: Fragment() {
@@ -178,6 +175,10 @@ class FragmentExampleConstraintLayout: Fragment() {
         binding.buttonThree.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(
+                    R.anim.fade_in,
+                    R.anim.fade_out
+                    )
                 .replace(R.id.container, FragmentRecyclerView.newInstance())
                 .addToBackStack("").commit()
         }
@@ -197,6 +198,10 @@ class FragmentExampleConstraintLayout: Fragment() {
         binding.buttonOne.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(
+                    R.anim.slide_out,
+                    R.anim.slide_out
+                )
                 .replace(R.id.container, FragmentIsTopAnimation.newInstance())
                 .addToBackStack("").commit()
         }

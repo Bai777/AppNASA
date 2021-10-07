@@ -1,6 +1,6 @@
 package viewModel
 
-import repository.PODServerResponseData
+import repository.dto.PODServerResponseData
 
 sealed class PODData {
     data class Success(val serverResponseData: PODServerResponseData) : PODData()
