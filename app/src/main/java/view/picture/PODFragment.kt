@@ -11,6 +11,7 @@ import android.os.Looper
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
+import android.text.style.ImageSpan
 import android.text.style.TypefaceSpan
 import android.view.*
 import android.widget.TextView
@@ -144,6 +145,12 @@ class PODFragment : Fragment() {
                         ResourcesCompat.getFont(requireContext(), R.font.architects_daughter),
                         0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
                     )
+
+                    for (i in spannable.indices) {
+                        if (spannable[i] == 'o') {
+                            spannable.setSpan(ImageSpan(requireContext(), R.drawable.ic_earth), i, i + 1, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                        }
+                    }
 
                     val request = FontRequest(
                         "com.google.android.gms.fonts",
